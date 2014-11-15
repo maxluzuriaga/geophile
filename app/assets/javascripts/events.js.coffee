@@ -2,8 +2,10 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$('tr.event-row').on("click", function() {
-    if($(this).data('href') !== undefined){
-        document.location = $(this).data('href');
-    }
-});
+ready = ->
+	$("tr").on "click", ->
+		document.location = $(this).data("href") if $(this).data("href") isnt `undefined`
+		return
+
+$(document).ready(ready)
+$(document).on('page:load', ready)
