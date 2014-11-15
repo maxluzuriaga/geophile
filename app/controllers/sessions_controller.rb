@@ -5,9 +5,17 @@ class SessionsController < ApplicationController
   def create
   	auth = request.env['omniauth.auth']
 
-  	puts auth['info']
+  	@user = User.find_by(provider: auth.provider, uid: auth.uid)
+  	unless @user
+      @user = User.create!({
+      	name: auth.info.name,
+      	email: auth.info.email,
+      	provider: auth.provider,
+      	uid: auth.uid
+      })
+    end
 
-  	render :text => auth.inspect
+    redirect_to "/"
   end
 
   def failure
