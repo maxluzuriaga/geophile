@@ -20,4 +20,9 @@ class SessionsController < ApplicationController
 
   def failure
   end
+
+  def destroy
+    sign_out
+    redirect_to login_path
+  end
 end
