@@ -1,5 +1,8 @@
 class SessionsController < ApplicationController
   def new
+    if signed_in?
+      redirect_to "/"
+    end
   end
 
   def create
@@ -15,6 +18,7 @@ class SessionsController < ApplicationController
       })
     end
 
+    sign_in @user
     redirect_to "/"
   end
 
