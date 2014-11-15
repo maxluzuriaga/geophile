@@ -1,11 +1,18 @@
 <h1><%= @event.name %></h1>
 <h4><%= @event.start_date.to_formatted_s(:long) %> to <%= @event.end_date.to_formatted_s(:long) %></h4>
 
-<hr />
+<hr class="no-margin" />
 
 <div class="row">
 	<div class="col-md-6">
 		<h3>Posts</h3>
+
+		<dl class="">
+		<% @event.posts.each do |post| %>
+			<dt><%= post.created_at.in_time_zone.to_formatted_s(:long) %></dt>
+			<dd><p><%= post.text %></p></dd>
+		<% end %>
+		</dl>
 	</div>
 	<div class="col-md-6">
 		<h3>Files</h3>
