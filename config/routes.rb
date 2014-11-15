@@ -8,10 +8,15 @@
 #
 
 Rails.application.routes.draw do
+  get '', :to => 'events#index'
+  get 'events/:id', :to => 'events#show', :as => 'event'
+  get 'new', :to => 'events#new'
+  post 'events', :to => 'events#create'
+
   get 'api/ping'
 
-  get '/login', :to => 'sessions#new', :as => :login
-  get '/logout', :to => 'sessions#destroy', :as => :logout
-  get '/auth/:provider/callback', :to => 'sessions#create'
-  get '/auth/failure', :to => 'sessions#failure'
+  get 'login', :to => 'sessions#new', :as => :login
+  get 'logout', :to => 'sessions#destroy', :as => :logout
+  get 'auth/:provider/callback', :to => 'sessions#create'
+  get 'auth/failure', :to => 'sessions#failure'
 end

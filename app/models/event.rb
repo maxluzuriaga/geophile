@@ -17,20 +17,20 @@
 EARTH_RADIUS = 20903520 # feet
 
 def distance(lat1, lng1, lat2, lng2)
-      dLat = to_radians(lat2 - lat1)
-      dLng = to_radians(lng2 - lng1)
+  dLat = to_radians(lat2 - lat1)
+  dLng = to_radians(lng2 - lng1)
 
-      a = Math.sin(dLat/2) * Math.sin(dLat/2) + 
-          Math.cos(to_radians(lat1)) * Math.cos(to_radians(lat2)) *
-          Math.sin(dLng/2) * Math.sin(dLng/2)
-      c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a))
+  a = Math.sin(dLat/2) * Math.sin(dLat/2) + 
+      Math.cos(to_radians(lat1)) * Math.cos(to_radians(lat2)) *
+      Math.sin(dLng/2) * Math.sin(dLng/2)
+  c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a))
 
-      EARTH_RADIUS * c
-    end
+  EARTH_RADIUS * c
+end
 
-    def to_radians(d)
-      d * Math::PI / 180
-    end
+def to_radians(d)
+  d * Math::PI / 180
+end
 
 class Event < ActiveRecord::Base
   belongs_to :user

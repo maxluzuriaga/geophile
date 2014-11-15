@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   private
 
     def authenticate
-      unless logged_in?
+      unless signed_in?
         redirect_to login_path, :notice => "Please sign in"
       end
     end

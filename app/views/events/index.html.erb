@@ -1,0 +1,21 @@
+<h1>Active Events</h1>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Start Date</th>
+			<th>End Date</th>
+			<th>Posts</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @current_events.each do |event| %>
+			<tr class="event-row" data-href-"#">
+				<td><%= event.name %></td>
+				<td><%= event.start_date %></td>
+				<td><%= event.end_date %></td>
+				<td>TODO</td>
+			</a>
+		<% end %>
+	</tbody>
+</table>
