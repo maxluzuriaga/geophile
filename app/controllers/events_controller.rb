@@ -8,6 +8,11 @@ class EventsController < ApplicationController
   end
 
   def show
+    @event = Event.find_by(id: params[:id])
+
+    if @event.user != @current_user
+      redirect_to "/"
+    end
   end
 
   def new

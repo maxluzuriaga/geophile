@@ -15,4 +15,4 @@
 /log/*.log
 /tmp
 
-development.env
+/config/development.env

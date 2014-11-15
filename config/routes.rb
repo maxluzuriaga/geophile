@@ -1,6 +1,11 @@
 # == Route Map
 #
 #       Prefix Verb URI Pattern                        Controller#Action
+#              GET  /                                  events#index
+#        event GET  /events/:id(.:format)              events#show
+#          new GET  /new(.:format)                     events#new
+#       events POST /events(.:format)                  events#create
+#     api_ping GET  /api/ping(.:format)                api#ping
 #        login GET  /login(.:format)                   sessions#new
 #       logout GET  /logout(.:format)                  sessions#destroy
 #              GET  /auth/:provider/callback(.:format) sessions#create
