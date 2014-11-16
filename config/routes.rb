@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get 'events/:id', :to => 'events#show', :as => 'event'
   get 'new', :to => 'events#new'
   post 'events', :to => 'events#create'
+  post 'events/:event_id/posts', :to => 'posts#create', :as => 'create_post'
 
   get 'api/ping'
 

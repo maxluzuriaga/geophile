@@ -41,9 +41,6 @@ class Event < ActiveRecord::Base
     possibles = Event.where("start_date <= ? AND end_date >= ?", Date.today, Date.today)
 
     possibles.select do |e|
-      puts e
-      puts lat
-      puts lng
       distance(e.latitude, e.longitude, lat, lng) <= e.radius
     end
   end

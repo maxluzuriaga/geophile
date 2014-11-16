@@ -4,20 +4,20 @@
 		<%= form_tag("/events", method: "post") do %>
 			<div class="form-group">
 				<label for="name">Name:</label>
-				<input type="text" class="form-control" placeholder="My cool event" id="name">
+				<input type="text" name="name" class="form-control" placeholder="My cool event" id="name">
 			</div>
 			<div class="form-group">
 				<label for="from">From:</label>
-				<input type="date" class="form-control" id="from">
+				<input type="date" name="start_date" class="form-control" id="from">
 			</div>
 			<div class="form-group">
 				<label for="end">To:</label>
-				<input type="date" class="form-control" id="end">
+				<input type="date" name="end_date" class="form-control" id="end">
 			</div>
 
-			<input type="hidden" id="latitude">
-			<input type="hidden" id="longitude">
-			<input type="hidden" id="radius">
+			<input type="hidden" name="latitude" id="latitude">
+			<input type="hidden" name="longitude" id="longitude">
+			<input type="hidden" name="radius" id="radius">
 
 			<button type="submit" class="btn btn-primary btn-blo btn-submit">Create Event</button>
 		<% end %>

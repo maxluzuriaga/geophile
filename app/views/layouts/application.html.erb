@@ -32,7 +32,7 @@
 				</div>
 				<% if @current_user %>
 					<div class="navbar-right">
-						<p class="navbar-text">Signed in as <%= @current_user.name %></p>
+						<p class="navbar-text">Signed in as <%= @current_user.name %> <a href="/logout" class="navbar-link">(logout)</a></p>
 						<a href="/new" class="btn btn-primary navbar-btn"><span class="glyphicon glyphicon-plus"></span> New Event</a>
 					</div>
 				<% end %>
