@@ -1,0 +1,17 @@
+body {
+  padding-top: 50px;
+}
+@media (min-width: 1200px) {
+    .container{
+        max-width: 970px;
+    }
+}
+
+tr.event-row {
+	cursor: pointer;
+}
+
+.no-margin {
+	margin-bottom: -3px;
+	margin-top: 15px;
+}
