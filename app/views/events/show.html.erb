@@ -19,7 +19,7 @@
 		<hr />
 
 		<dl class="">
-		<% @posts.each do |post| %>
+		<% @event.posts.each do |post| %>
 			<dt><%= post.created_at.in_time_zone.to_formatted_s(:long) %></dt>
 			<dd><p><%= post.text %></p></dd>
 		<% end %>

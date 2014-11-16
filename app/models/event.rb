@@ -34,8 +34,7 @@ end
 
 class Event < ActiveRecord::Base
   belongs_to :user
-  has_many :posts
-  has_many :posts
+  has_many :posts, -> { order(:created_at => :desc) }
 
   def self.locate(lat, lng)
     possibles = Event.where("start_date <= ? AND end_date >= ?", Date.today, Date.today)
