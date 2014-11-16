@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141115184134) do
+ActiveRecord::Schema.define(version: 20141116095301) do
 
   create_table "events", force: true do |t|
     t.string   "name"
@@ -32,6 +32,18 @@ ActiveRecord::Schema.define(version: 20141115184134) do
     t.datetime "updated_at"
   end
 
+  create_table "resources", force: true do |t|
+    t.string   "name"
+    t.string   "file_id"
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "event_id"
+    t.string   "mime_type"
+    t.integer  "size"
+    t.binary   "data"
+  end
+
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
@@ -39,6 +51,8 @@ ActiveRecord::Schema.define(version: 20141115184134) do
     t.string   "uid"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "token"
+    t.string   "refresh_token"
   end
 
 end

@@ -5,4 +5,8 @@ json.array! @events do |event|
   json.updates event.posts do |post|
     json.(post, :id, :text, :created_at)
   end
+
+  json.resources event.resources do |resource|
+    json.(resource, :id, :name, :url, :size, :mime_type, :created_at)
+  end
 end

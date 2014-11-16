@@ -9,7 +9,6 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find_by(id: params[:id])
-    # @posts = @event.posts.order(:created_at => :desc)
 
     if @event.user != @current_user
       redirect_to "/"

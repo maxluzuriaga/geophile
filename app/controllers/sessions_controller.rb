@@ -9,12 +9,18 @@ class SessionsController < ApplicationController
   	auth = request.env['omniauth.auth']
 
   	@user = User.find_by(provider: auth.provider, uid: auth.uid)
-  	unless @user
+    if @user
+      @user.token = auth.credentials.token
+      @user.refresh_token = auth.credentials.refresh_token
+      @user.save
+    else
       @user = User.create!({
       	name: auth.info.name,
       	email: auth.info.email,
       	provider: auth.provider,
-      	uid: auth.uid
+      	uid: auth.uid,
+        token: auth.credentials.token,
+        refresh_token: auth.credentials.refresh_token
       })
     end
 
