@@ -1,4 +1,5 @@
-== GeoPhile
+GeoPhile
+=====================
 
 My HackPrinceton 2014 submission which I worked on with [Aqeel Phillips (Princeton '17)](https://github.com/aqeelphillips). We wrote an app for Android and web (using Ruby on Rails) that allows event organizers to post exclusive location-based content for their event's attendees.
 
